@@ -1,2 +1,2 @@
-# cppPrimer
+# CppPrimer
 my answer for cppPrimer！
