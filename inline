@@ -1,0 +1,81 @@
+ #include <stdio.h>
+
+#include <iostream>
+
+/*显式内联
+
+ #include <iostream>
+
+ using namespace std;
+
+ class A
+
+ {
+
+ public:
+
+ inline void func(int,int); //将成员函数func()声明为内联函数
+
+ inline void print(); //将成员函数print()声明为内联函数
+
+ private:
+
+ int i,j;
+
+ };
+
+ int main()
+
+ {
+
+ A a;
+
+ a.func(1,2);  //调用func(1,2)内联函数等于直接将i=1,j=2写在这里
+
+ a.print();//调用print()内联函数等于将cout<<"两数相乘为："<<i*j<<endl;直接写到该行
+
+ return 0;
+
+ }
+
+ void A::func(int x,int y){i=x;j=y;} //func定义部分
+
+ void A::print(){cout<<"两数相乘为："<<i*j<<endl;} //print定义部分
+
+ */
+
+
+//隐式内联
+
+using namespace std;
+
+class A
+
+{
+
+public:
+
+    void func(int x,int y){i=x;j=y;}     //成员函数func()是内联函数
+
+    void print(){cout<<"两数相乘为："<<i*j<<endl;}  //成员函数print()是内联函数
+
+private:
+
+    int i,j;
+
+};
+
+int main()
+
+{
+
+    A a;
+
+    a.func(1,2); //调用func(1,2)内联函数等于直接将i=1,j=2写在这里
+
+    a.print(); //调用print()内联函数等于将"cout<<"两数相乘为："<<i*j<<endl;"直接写到该行
+
+    return 0;
+
+}
+
